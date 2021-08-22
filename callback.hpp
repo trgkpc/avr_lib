@@ -6,6 +6,8 @@
 
 #define CALLBACK_CYCLE 1000
 
+namespace Callback
+{
 void init(){
     // タイマ設定
     uint32_t b[8] = {0,1,8,32,64,128,256,1024};
@@ -30,13 +32,14 @@ void init(){
 
 void SensorCallback();
 void MainCallback();
+} // Callback
 
 ISR(TIMER2_COMPA_vect)
 {
-    MainCallback();
+    Callback::MainCallback();
 }
 
 ISR(TIMER2_COMPB_vect)
 {
-    SensorCallback();
+    Callback::SensorCallback();
 }
