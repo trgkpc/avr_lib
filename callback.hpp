@@ -1,3 +1,4 @@
+#pragma once
 #include <avr/interrupt.h>
 #ifndef F_CPU
 #  error "#define F_CPU needed"
